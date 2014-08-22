@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+	<script src="../js/controller.js"></script>
+</head>
+<body>
+	Databind
+	<div ng-controller="simpleController">
+		Olá <input type="text" ng-model="yourName"/><hr/>
+		<h1>Olá {{yourName}}</h1>
+	</div>
+
+	OnClick
+	<div ng-controller="countController">
+		<a href="#" ng-click="addOne()">Add 1</a><hr/>
+		<p>Counter value: {{counter}}</p>
+	</div>
+
+	Loop
+	<div ng-controller="loopController">
+		<ul>
+			<li ng-repeat="fruit in fruits">{{fruit}}</li>
+		</ul>
+		<hr/>
+	</div>
+
+	Formulário
+	<div>
+		<form name="myForm">
+			<span ng-show="myForm.$invalid">Found erros in the form!</span><br >
+			<input type="text" ng-model="name" name="Name" value="Your Name" required />
+			<button ng-disabled="myForm.$invalid"/>Save</button>
+		</form>
+	</div>
+</body>
+</html>
